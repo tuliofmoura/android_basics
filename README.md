@@ -31,5 +31,6 @@ Ao longo do curso iremos desenvolver um aplicativo que estará completamente fun
 	- [SharedPreferences](https://developer.android.com/training/data-storage/shared-preferences)
 
 
+
 ## Sobre o autor
 [<img src="https://card.exophase.com/1/1147004.png">](https://www.exophase.com/user/tuliofm/)
