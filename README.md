@@ -20,13 +20,15 @@ Ao longo do curso iremos desenvolver um aplicativo que estará completamente fun
 	- [Gradle Build](https://developer.android.com/studio/build/)
 
 
-## Aula 02
+## Aulas 02 e 03
 
 - **Navegação e layout**
 	- [Activity](https://developer.android.com/guide/components/activities)
 	- [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout)
 	- [Look and feel](https://developer.android.com/guide/topics/ui/look-and-feel)
 	- [Resources](https://developer.android.com/guide/topics/resources/available-resources)
+	- [Fragment] (https://developer.android.com/guide/components/fragments)
+	- [SharedPreferences] (https://developer.android.com/training/data-storage/shared-preferences)
 
 
 ## Sobre o autor
