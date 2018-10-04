@@ -2,7 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">@color/slate_grey</color>
 
     <color name="turquoise_blue">#00a5b5</color>
+    <color name="slate_grey">#646569</color>
+    <color name="black_24">#3d000000</color>
 </resources>

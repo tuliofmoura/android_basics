@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Android Basics</string>
+
+    <!-- general strings -->
+    <string name="continue_button_label">Continuar</string>
+
+    <string name="starter_activity_message">Antes de começarmos, como você gostaria de ser chamado?</string>
+    <string name="starter_activity_hint">Nome</string>
+    <string name="starter_activity_name_error_message">Informe o seu nome.</string>
+
+    <string name="hello_activity_title">Olá, %s!</string>
+    <string name="hello_activity_message">Que bom ver você por aqui!</string>
+    <string name="hello_activity_button_label">Ok, vamos lá!</string>
+    <string name="hello_activity_not_show_again">Não mostrar novamente.</string>
+
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/normal_margin_size">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/starter_activity_message"
+        android:textSize="@dimen/mid_font_size" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/starter_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="@string/starter_activity_hint"
+        app:counterEnabled="true"
+        app:counterMaxLength="30">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/starter_input_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:textSize="@dimen/input_font_size" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/starter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:padding="@dimen/normal_margin_size"
+        android:text="@string/continue_button_label"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/normal_font_size" />
+
+</RelativeLayout>

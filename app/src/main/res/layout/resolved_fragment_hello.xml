@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/normal_font_size">
+
+    <TextView
+        android:id="@+id/hello_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:textColor="@color/turquoise_blue"
+        android:textSize="@dimen/big_font_size"
+        tools:text="@string/hello_activity_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hello_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/normal_margin_size"
+        android:gravity="center"
+        android:text="@string/hello_activity_message"
+        android:textSize="@dimen/mid_font_size" />
+
+    <Button
+        android:id="@+id/hello_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:padding="@dimen/normal_margin_size"
+        android:text="@string/hello_activity_button_label"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/normal_font_size" />
+
+    <CheckBox
+        android:id="@+id/hello_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hello_button"
+        android:layout_marginBottom="@dimen/normal_margin_size"
+        android:text="@string/hello_activity_not_show_again"
+        android:textSize="@dimen/normal_font_size" />
+
+</RelativeLayout>
