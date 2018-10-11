@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import br.com.tuliofmoura.androidbasics.R;
+import br.com.tuliofmoura.androidbasics.resolved.category.ResolvedFutureMainActivity;
 import br.com.tuliofmoura.androidbasics.resolved.preferences.ResolvedPreferences;
 
 public class ResolvedHelloActivity extends AppCompatActivity implements ResolvedHelloFragment.FragmentInteractionListener {

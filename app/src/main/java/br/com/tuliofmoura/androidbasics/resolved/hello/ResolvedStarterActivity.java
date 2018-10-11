@@ -35,7 +35,7 @@ public class ResolvedStarterActivity extends AppCompatActivity {
         inputEditText = findViewById(R.id.starter_input_text);
         final String name = ResolvedPreferences.getUserName(this);
         inputEditText.setText(name);
-        button = (Button) findViewById(R.id.starter_button);
+        button = findViewById(R.id.starter_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
