@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import br.com.tuliofmoura.androidbasics.R;
-import br.com.tuliofmoura.androidbasics.resolved.category.ResolvedFutureMainActivity;
+import br.com.tuliofmoura.androidbasics.resolved.category.ResolvedCategoriesActivity;
 import br.com.tuliofmoura.androidbasics.resolved.preferences.ResolvedPreferences;
 
 public class ResolvedHelloActivity extends AppCompatActivity implements ResolvedHelloFragment.FragmentInteractionListener {
@@ -38,7 +38,7 @@ public class ResolvedHelloActivity extends AppCompatActivity implements Resolved
     public void onButtonClicked(boolean checked) {
         ResolvedPreferences.setNeedToShowHello(this, !checked);
         ResolvedPreferences.setUserName(this, getUserName());
-        startActivity(ResolvedFutureMainActivity.newIntent(this));
+        startActivity(ResolvedCategoriesActivity.newIntent(this));
         finish();
     }
 }

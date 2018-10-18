@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import br.com.tuliofmoura.androidbasics.R;
-import br.com.tuliofmoura.androidbasics.resolved.model.Category;
+import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Category;
 
 public class ResolvedCategoriesFragment extends Fragment {
 

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import br.com.tuliofmoura.androidbasics.resolved.category.ResolvedFutureMainActivity;
+import br.com.tuliofmoura.androidbasics.resolved.category.ResolvedCategoriesActivity;
 import br.com.tuliofmoura.androidbasics.resolved.hello.ResolvedStarterActivity;
 import br.com.tuliofmoura.androidbasics.resolved.preferences.ResolvedPreferences;
 
@@ -22,7 +22,7 @@ public class ResolvedBrandedLaunchActivity extends AppCompatActivity {
         if (needToShowHello)
             intent = ResolvedStarterActivity.newIntent(this);
         else
-            intent = ResolvedFutureMainActivity.newIntent(this);
+            intent = ResolvedCategoriesActivity.newIntent(this);
         startActivity(intent);
         finish();
     }

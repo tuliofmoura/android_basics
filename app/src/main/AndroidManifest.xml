@@ -3,6 +3,7 @@
     package="br.com.tuliofmoura.androidbasics">
 
     <application
+        android:name=".resolved.application.AndroidBasicsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -37,7 +38,7 @@
             android:name=".resolved.hello.ResolvedHelloActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".resolved.category.ResolvedFutureMainActivity"
+            android:name=".resolved.category.ResolvedCategoriesActivity"
             android:screenOrientation="portrait" />
 
     </application>

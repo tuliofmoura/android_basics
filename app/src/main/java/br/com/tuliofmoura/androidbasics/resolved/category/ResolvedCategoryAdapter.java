@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.tuliofmoura.androidbasics.R;
-import br.com.tuliofmoura.androidbasics.resolved.model.Category;
+import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Category;
 
 /**
  * Criado por Tulio Moura em 11/out/2018.
@@ -36,7 +36,7 @@ public class ResolvedCategoryAdapter extends RecyclerView.Adapter<ResolvedCatego
     public void onBindViewHolder(@NonNull ResolvedCategoryViewHolder holder, int position) {
         final Category category = categoryList.get(position);
         holder.nameTextView.setText(category.getName());
-        holder.descriptionTextView.setText(category.getDescription());
+        holder.descriptionTextView.setText(category.getCategoryDescription());
         final int categoryIconResId = holder.iconImageView.getResources().getIdentifier(
                 "ic_category_" + category.getId(),
                 "drawable",
