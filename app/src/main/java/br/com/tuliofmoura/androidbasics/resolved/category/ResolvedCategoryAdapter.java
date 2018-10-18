@@ -19,9 +19,11 @@ import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Category;
 public class ResolvedCategoryAdapter extends RecyclerView.Adapter<ResolvedCategoryAdapter.ResolvedCategoryViewHolder> {
 
     private List<Category> categoryList;
+    private View.OnClickListener onClickListener;
 
-    public ResolvedCategoryAdapter(List<Category> categoryList) {
+    public ResolvedCategoryAdapter(List<Category> categoryList, View.OnClickListener clickListener) {
         this.categoryList = categoryList;
+        this.onClickListener = clickListener;
     }
 
     @NonNull
@@ -43,6 +45,9 @@ public class ResolvedCategoryAdapter extends RecyclerView.Adapter<ResolvedCatego
                 holder.iconImageView.getContext().getPackageName()
         );
         holder.iconImageView.setImageResource(categoryIconResId);
+
+        holder.itemView.setTag(category);
+        holder.itemView.setOnClickListener(onClickListener);
     }
 
     @Override

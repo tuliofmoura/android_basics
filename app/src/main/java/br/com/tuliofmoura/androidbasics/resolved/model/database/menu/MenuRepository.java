@@ -29,10 +29,21 @@ public class MenuRepository {
     }
 
     public List<Category> findAllCategories() {
-        Realm realm = Realm.getInstance(config);
-        RealmResults<Category> results = realm.where(Category.class)
+        final Realm realm = Realm.getInstance(config);
+        final RealmResults<Category> results = realm.where(Category.class)
                 .findAll();
-        List<Category> resultList = realm.copyFromRealm(results);
+        final List<Category> resultList = realm.copyFromRealm(results);
+        realm.close();
+        return resultList;
+    }
+
+    public List<Product> findProductsByCategoryId(long categoryId) {
+        final Realm realm = Realm.getInstance(config);
+        final RealmResults<Product> result = realm.where(Product.class)
+                .and()
+                .equalTo("categoryId", categoryId)
+                .findAll();
+        final List<Product> resultList = realm.copyFromRealm(result);
         realm.close();
         return resultList;
     }
@@ -41,7 +52,7 @@ public class MenuRepository {
      * Usado como schema para o Reino dos Contatos.
      * Define quais as classes fazem desse Reino.
      */
-    @RealmModule(classes = {Category.class})
+    @RealmModule(classes = {Category.class, Product.class})
     private static class MenuRealmModule {
     }
 }

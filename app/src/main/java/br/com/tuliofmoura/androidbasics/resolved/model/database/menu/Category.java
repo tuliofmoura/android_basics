@@ -18,15 +18,6 @@ public class Category extends RealmObject {
     @Required
     private String categoryDescription;
 
-    public Category() {
-    }
-
-    public Category(long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.categoryDescription = description;
-    }
-
     public Long getId() {
         return id;
     }

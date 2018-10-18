@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -31,5 +32,11 @@ public class ResolvedCategoriesActivity
     @Override
     public List<Category> getCategories() {
         return MenuRepository.getInstance().findAllCategories();
+    }
+
+    @Override
+    public void onCategoryClicked(Category category) {
+        Toast.makeText(this, category.getName(), Toast.LENGTH_LONG).show();
+        //TODO start activity
     }
 }

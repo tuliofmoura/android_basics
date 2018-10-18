@@ -14,7 +14,8 @@ import java.util.List;
 import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Category;
 
-public class ResolvedCategoriesFragment extends Fragment {
+public class ResolvedCategoriesFragment extends Fragment
+        implements View.OnClickListener {
 
     private OnFragmentInteractionListener listener;
     private ResolvedCategoryAdapter adapter;
@@ -32,7 +33,7 @@ public class ResolvedCategoriesFragment extends Fragment {
                              Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.resolved_fragment_list, container, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new ResolvedCategoryAdapter(listener.getCategories());
+        adapter = new ResolvedCategoryAdapter(listener.getCategories(), this);
         recyclerView.setAdapter(adapter);
         return recyclerView;
     }
@@ -54,8 +55,16 @@ public class ResolvedCategoriesFragment extends Fragment {
         listener = null;
     }
 
+    @Override
+    public void onClick(View view) {
+        final Category category = (Category) view.getTag();
+        listener.onCategoryClicked(category);
+    }
+
     public interface OnFragmentInteractionListener {
 
         List<Category> getCategories();
+
+        void onCategoryClicked(Category category);
     }
 }
