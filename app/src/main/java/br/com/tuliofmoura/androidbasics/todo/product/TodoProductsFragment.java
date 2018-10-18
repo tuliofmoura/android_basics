@@ -9,15 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
-
 import br.com.tuliofmoura.androidbasics.R;
-import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 
 public class TodoProductsFragment extends Fragment {
 
     private OnFragmentInteractionListener listener;
-    private TodoProductAdapter adapter;
 
     public TodoProductsFragment() {
         // Required empty public constructor
@@ -32,8 +28,6 @@ public class TodoProductsFragment extends Fragment {
                              Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.resolved_fragment_list, container, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new TodoProductAdapter(listener.getProducts());
-        recyclerView.setAdapter(adapter);
         return recyclerView;
     }
 
@@ -56,7 +50,6 @@ public class TodoProductsFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
 
-        List<Product> getProducts();
 
     }
 }

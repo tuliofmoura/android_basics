@@ -11,7 +11,6 @@ import java.util.List;
 import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Category;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.MenuRepository;
-import br.com.tuliofmoura.androidbasics.todo.product.TodoProductsActivity;
 
 public class ResolvedCategoriesActivity
         extends AppCompatActivity
@@ -39,6 +38,5 @@ public class ResolvedCategoriesActivity
     public void onCategoryClicked(Category category) {
         Toast.makeText(this, category.getName(), Toast.LENGTH_LONG).show();
         //TODO start activity
-        startActivity(TodoProductsActivity.newIntent(this, category.getId()));
     }
 }

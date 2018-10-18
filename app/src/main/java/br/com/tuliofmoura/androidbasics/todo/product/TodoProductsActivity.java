@@ -35,8 +35,4 @@ public class TodoProductsActivity
                 .commit();
     }
 
-    @Override
-    public List<Product> getProducts() {
-        return MenuRepository.getInstance().findProductsByCategoryId(categoryId);
-    }
 }
