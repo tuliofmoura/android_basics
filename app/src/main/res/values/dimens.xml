@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="small_font_size">12sp</dimen>
     <dimen name="normal_font_size">16sp</dimen>
     <dimen name="mid_font_size">20sp</dimen>
     <dimen name="big_font_size">34sp</dimen>
@@ -8,5 +9,6 @@
 
 
     <dimen name="normal_margin_size">16dp</dimen>
+    <dimen name="small_margin_size">8dp</dimen>
 
 </resources>

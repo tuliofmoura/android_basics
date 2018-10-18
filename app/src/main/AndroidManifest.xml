@@ -11,16 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--<activity android:name=".todo.TodoStarterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>-->
-
-
-        <!-- Activities resolvidas -->
         <activity
             android:name=".resolved.ResolvedBrandedLaunchActivity"
             android:screenOrientation="portrait"
@@ -39,6 +29,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".resolved.category.ResolvedCategoriesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".todo.product.TodoProductsActivity"
             android:screenOrientation="portrait" />
 
     </application>
