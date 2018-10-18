@@ -9,4 +9,4 @@
     android:paddingBottom="@dimen/normal_margin_size"
     android:paddingTop="@dimen/normal_margin_size"
     android:scrollbars="vertical"
-    tools:listitem="@layout/item_category" />
+    tools:listitem="@layout/resolved_item_category" />

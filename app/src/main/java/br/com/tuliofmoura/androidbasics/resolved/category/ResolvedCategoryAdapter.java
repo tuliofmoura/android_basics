@@ -28,7 +28,7 @@ public class ResolvedCategoryAdapter extends RecyclerView.Adapter<ResolvedCatego
     @Override
     public ResolvedCategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         final View rootView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_category, parent, false);
+                .inflate(R.layout.resolved_item_category, parent, false);
         return new ResolvedCategoryViewHolder(rootView);
     }
 
