@@ -37,7 +37,7 @@ public class MenuRepository {
         return resultList;
     }
 
-    public List<Product> findProducts() {
+    public List<Product> findProducts(/*TODO receber e filtrar produtos por categoryId*/) {
         final Realm realm = Realm.getInstance(config);
         final RealmResults<Product> result = realm.where(Product.class)
                 .findAll();

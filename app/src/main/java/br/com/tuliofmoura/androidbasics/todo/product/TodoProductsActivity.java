@@ -35,4 +35,7 @@ public class TodoProductsActivity
                 .commit();
     }
 
+    //TODO implementar metodos da interface do fragmento
+    //TODO buscar produtos no MenuRepository
+
 }

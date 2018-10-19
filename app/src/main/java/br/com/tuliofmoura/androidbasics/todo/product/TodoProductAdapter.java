@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 
 /**
@@ -17,8 +18,9 @@ import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 public class TodoProductAdapter extends RecyclerView.Adapter<TodoProductAdapter.TodoProductViewHolder> {
 
     private List<Product> products;
+    //TODO onclickLister
 
-    public TodoProductAdapter(List<Product> products) {
+    public TodoProductAdapter(List<Product> products /*TODO receber parametro onclickListener*/) {
         this.products = products;
     }
 
@@ -26,11 +28,14 @@ public class TodoProductAdapter extends RecyclerView.Adapter<TodoProductAdapter.
     @Override
     public TodoProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return null;
+        //TODO inflar todo_item_product
     }
 
     @Override
     public void onBindViewHolder(@NonNull TodoProductViewHolder holder, int position) {
-
+        Product product = products.get(position);
+        holder.establishmentIdTextView.setText(product.getEstablishmentId());
+        //TODO fazer isso para cada elemento do viewHolder
     }
 
     @Override
@@ -48,6 +53,8 @@ public class TodoProductAdapter extends RecyclerView.Adapter<TodoProductAdapter.
 
         TodoProductViewHolder(View view) {
             super(view);
+            //TODO fazer findViewById para cada view
+            establishmentIdTextView = view.findViewById(R.id.establishment_id_label);
         }
     }
 }
