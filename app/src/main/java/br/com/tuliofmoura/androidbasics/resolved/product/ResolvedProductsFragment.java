@@ -1,4 +1,4 @@
-package br.com.tuliofmoura.androidbasics.todo.product;
+package br.com.tuliofmoura.androidbasics.resolved.product;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,16 +14,17 @@ import java.util.List;
 import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 
-public class TodoProductsFragment extends Fragment {
+public class ResolvedProductsFragment extends Fragment {
 
     private OnFragmentInteractionListener listener;
+    private ResolvedProductAdapter adapter;
 
-    public TodoProductsFragment() {
+    public ResolvedProductsFragment() {
         // Required empty public constructor
     }
 
-    public static TodoProductsFragment newInstance() {
-        return new TodoProductsFragment();
+    public static ResolvedProductsFragment newInstance() {
+        return new ResolvedProductsFragment();
     }
 
     @Override
@@ -31,8 +32,10 @@ public class TodoProductsFragment extends Fragment {
                              Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.resolved_fragment_list, container, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        //TODO instanciar o TodoProductAdapter
+        //TODO instanciar o ResolvedProductAdapter
         //TODO settar adapter na recyclerView
+        adapter = new ResolvedProductAdapter(listener.getProducts());
+        recyclerView.setAdapter(adapter);
         return recyclerView;
     }
 
@@ -56,5 +59,6 @@ public class TodoProductsFragment extends Fragment {
     public interface OnFragmentInteractionListener {
 
         //TODO criar metodo para forçar activity a devolver a lista de produtos
+        List<Product> getProducts();
     }
 }

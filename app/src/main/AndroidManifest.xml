@@ -31,7 +31,7 @@
             android:name=".resolved.category.ResolvedCategoriesActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".todo.product.TodoProductsActivity"
+            android:name=".resolved.product.ResolvedProductsActivity"
             android:screenOrientation="portrait" />
 
     </application>

@@ -4,14 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import java.util.List;
 
 import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Category;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.MenuRepository;
-import br.com.tuliofmoura.androidbasics.todo.product.TodoProductsActivity;
+import br.com.tuliofmoura.androidbasics.resolved.product.ResolvedProductsActivity;
 
 public class ResolvedCategoriesActivity
         extends AppCompatActivity
@@ -37,7 +36,7 @@ public class ResolvedCategoriesActivity
 
     @Override
     public void onCategoryClicked(Category category) {
-        Toast.makeText(this, category.getName(), Toast.LENGTH_LONG).show();
-        //TODO start activity TodoProductsActivity.newIntent
+        //TODO start activity ResolvedProductsActivity.newIntent
+        startActivity(ResolvedProductsActivity.newIntent(this, category.getId()));
     }
 }

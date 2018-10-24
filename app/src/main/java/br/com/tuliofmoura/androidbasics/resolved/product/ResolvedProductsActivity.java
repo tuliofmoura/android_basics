@@ -1,4 +1,4 @@
-package br.com.tuliofmoura.androidbasics.todo.product;
+package br.com.tuliofmoura.androidbasics.resolved.product;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,17 +11,17 @@ import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.MenuRepository;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 
-public class TodoProductsActivity
+public class ResolvedProductsActivity
         extends AppCompatActivity
-        implements TodoProductsFragment.OnFragmentInteractionListener {
+        implements ResolvedProductsFragment.OnFragmentInteractionListener {
 
     private static final String EXTRA_CATEGORY_ID = "categoryId";
 
     private long categoryId;
 
     public static Intent newIntent(Context context, long categoryId) {
-        final Intent intent = new Intent(context, TodoProductsActivity.class);
-        intent.putExtra(EXTRA_CATEGORY_ID,categoryId);
+        final Intent intent = new Intent(context, ResolvedProductsActivity.class);
+        intent.putExtra(EXTRA_CATEGORY_ID, categoryId);
         return intent;
     }
 
@@ -31,11 +31,15 @@ public class TodoProductsActivity
         this.categoryId = getIntent().getExtras().getLong(EXTRA_CATEGORY_ID);
         setContentView(R.layout.resolved_activity_list);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.list_fragment_container, TodoProductsFragment.newInstance())
+                .replace(R.id.list_fragment_container, ResolvedProductsFragment.newInstance())
                 .commit();
     }
 
     //TODO implementar metodos da interface do fragmento
     //TODO buscar produtos no MenuRepository
+    @Override
+    public List<Product> getProducts() {
+        return MenuRepository.getInstance().findProductsByCategoryId(categoryId);
+    }
 
 }
