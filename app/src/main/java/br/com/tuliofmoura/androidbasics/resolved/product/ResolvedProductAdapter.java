@@ -19,7 +19,6 @@ import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 public class ResolvedProductAdapter extends RecyclerView.Adapter<ResolvedProductAdapter.TodoProductViewHolder> {
 
     private List<Product> products;
-    //TODO onclickLister
     private ProductInteractionListener onProductInteractionListener;
 
     public ResolvedProductAdapter(List<Product> products, ProductInteractionListener interactionListener) {
@@ -30,20 +29,18 @@ public class ResolvedProductAdapter extends RecyclerView.Adapter<ResolvedProduct
     @NonNull
     @Override
     public TodoProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //TODO inflar todo_item_product
         final View rootView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.resolved_item_product, parent, false);
         return new TodoProductViewHolder(rootView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TodoProductViewHolder holder, final int position) {
-        //TODO fazer isso para cada elemento do viewHolder
+    public void onBindViewHolder(@NonNull final TodoProductViewHolder holder, int position) {
         final Product product = products.get(position);
         holder.nameTextView.setText(product.getName());
         holder.descriptionTextView.setText(product.getProductDescription());
         holder.valueTextView.setText(String.format("R$ %.2f", product.getValue()));
-
+        // se o produto já está selecionado, escondemos o botão de adicionar e mostramos o de remover
         if (onProductInteractionListener.isSelected(product.getId())) {
             holder.addButtonImageView.setVisibility(View.GONE);
             holder.removeButtonImageView.setVisibility(View.VISIBLE);
@@ -53,10 +50,12 @@ public class ResolvedProductAdapter extends RecyclerView.Adapter<ResolvedProduct
                 public void onClick(View view) {
                     final Product productToRemove = (Product) view.getTag();
                     onProductInteractionListener.onRemoveProductClicked(productToRemove);
-                    notifyItemChanged(position);
+                    notifyItemChanged(holder.getAdapterPosition());
                 }
             });
-        } else {
+        }
+        // caso contrário, escondemos o de remover e mostramos o de adicionar
+        else {
             holder.addButtonImageView.setVisibility(View.VISIBLE);
             holder.removeButtonImageView.setVisibility(View.GONE);
             holder.addButtonImageView.setTag(product);
@@ -65,7 +64,7 @@ public class ResolvedProductAdapter extends RecyclerView.Adapter<ResolvedProduct
                 public void onClick(View view) {
                     final Product productToAdd = (Product) view.getTag();
                     onProductInteractionListener.onAddProductClicked(productToAdd);
-                    notifyItemChanged(position);
+                    notifyItemChanged(holder.getAdapterPosition());
                 }
             });
         }
@@ -87,7 +86,6 @@ public class ResolvedProductAdapter extends RecyclerView.Adapter<ResolvedProduct
 
         TodoProductViewHolder(View view) {
             super(view);
-            //TODO fazer findViewById para cada view
             establishmentIdTextView = view.findViewById(R.id.establishment_id_label);
             nameTextView = view.findViewById(R.id.product_name_label);
             descriptionTextView = view.findViewById(R.id.product_description_label);

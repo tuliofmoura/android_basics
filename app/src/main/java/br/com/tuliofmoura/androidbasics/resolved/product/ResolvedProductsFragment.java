@@ -33,8 +33,6 @@ public class ResolvedProductsFragment extends Fragment
                              Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.resolved_fragment_list, container, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        //TODO instanciar o ResolvedProductAdapter
-        //TODO settar adapter na recyclerView
         final ResolvedProductAdapter adapter = new ResolvedProductAdapter(listener.getProducts(), this);
         recyclerView.setAdapter(adapter);
         return recyclerView;
@@ -77,7 +75,6 @@ public class ResolvedProductsFragment extends Fragment
 
     public interface OnFragmentInteractionListener {
 
-        //TODO criar metodo para forçar activity a devolver a lista de produtos
         List<Product> getProducts();
 
         boolean isSelected(long productId);

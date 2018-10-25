@@ -32,8 +32,11 @@ public class ResolvedProductsActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.categoryId = getIntent().getExtras().getLong(EXTRA_CATEGORY_ID);
+        // verificamos se existe uma lista de produtos selecionados que foi salva previamente
+        // devido a uma destruição forçada desta activity pelo sistema
         if (savedInstanceState != null)
             selectedProducts = (ArrayList<Product>) savedInstanceState.getSerializable(SAVED_STATE_PRODUCTS);
+            // caso contrário usamos uma lista nova e vazia
         else
             selectedProducts = new ArrayList<>();
         setContentView(R.layout.resolved_activity_list);
@@ -45,11 +48,11 @@ public class ResolvedProductsActivity
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable(SAVED_STATE_PRODUCTS, selectedProducts);
+        if (!selectedProducts.isEmpty())
+            //salvamos a lista de produtos selecionados atualmente
+            outState.putSerializable(SAVED_STATE_PRODUCTS, selectedProducts);
     }
 
-    //TODO implementar metodos da interface do fragmento
-    //TODO buscar produtos no MenuRepository
     @Override
     public List<Product> getProducts() {
         return MenuRepository.getInstance().findProductsByCategoryId(categoryId);
@@ -58,6 +61,7 @@ public class ResolvedProductsActivity
     @Override
     public boolean isSelected(long productId) {
         boolean result = false;
+        //verifica se um produto está na lista de selecionados
         for (Product product : selectedProducts) {
             if (product.getId() == productId) {
                 result = true;
