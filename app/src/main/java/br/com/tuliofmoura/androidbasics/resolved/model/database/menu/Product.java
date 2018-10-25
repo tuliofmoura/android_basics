@@ -1,5 +1,7 @@
 package br.com.tuliofmoura.androidbasics.resolved.model.database.menu;
 
+import java.io.Serializable;
+
 import io.realm.RealmObject;
 import io.realm.annotations.Index;
 import io.realm.annotations.Required;
@@ -7,7 +9,7 @@ import io.realm.annotations.Required;
 /**
  * Criado por Tulio Moura em 17/out/2018.
  */
-public class Product extends RealmObject {
+public class Product extends RealmObject implements Serializable {
 
     @Index
     private long id;

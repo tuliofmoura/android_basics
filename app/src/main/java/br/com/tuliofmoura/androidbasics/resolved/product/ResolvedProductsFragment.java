@@ -14,10 +14,10 @@ import java.util.List;
 import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
 
-public class ResolvedProductsFragment extends Fragment {
+public class ResolvedProductsFragment extends Fragment
+        implements ProductInteractionListener {
 
     private OnFragmentInteractionListener listener;
-    private ResolvedProductAdapter adapter;
 
     public ResolvedProductsFragment() {
         // Required empty public constructor
@@ -28,13 +28,14 @@ public class ResolvedProductsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.resolved_fragment_list, container, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         //TODO instanciar o ResolvedProductAdapter
         //TODO settar adapter na recyclerView
-        adapter = new ResolvedProductAdapter(listener.getProducts());
+        final ResolvedProductAdapter adapter = new ResolvedProductAdapter(listener.getProducts(), this);
         recyclerView.setAdapter(adapter);
         return recyclerView;
     }
@@ -56,9 +57,34 @@ public class ResolvedProductsFragment extends Fragment {
         listener = null;
     }
 
+    @Override
+    public boolean isSelected(Long productId) {
+        //delega para a Activity (ViewModel) a responsabilidade de saber se um produto está ou não selecionado
+        return listener.isSelected(productId);
+    }
+
+    @Override
+    public void onAddProductClicked(Product productToAdd) {
+        //delega para a Activity (ViewModel) a responsabilidade de atualizar a lista de produtos selecionados
+        listener.onProductAdded(productToAdd);
+    }
+
+    @Override
+    public void onRemoveProductClicked(Product productToRemove) {
+        //delega para a Activity (ViewModel) a responsabilidade de atualizar a lista de produtos selecionados
+        listener.onProductRemoved(productToRemove);
+    }
+
     public interface OnFragmentInteractionListener {
 
         //TODO criar metodo para forçar activity a devolver a lista de produtos
         List<Product> getProducts();
+
+        boolean isSelected(long productId);
+
+        void onProductAdded(Product addedProduct);
+
+        void onProductRemoved(Product removedProduct);
+
     }
 }
