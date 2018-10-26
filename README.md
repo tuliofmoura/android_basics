@@ -31,6 +31,16 @@ Ao longo do curso iremos desenvolver um aplicativo que estará completamente fun
 	- [SharedPreferences](https://developer.android.com/training/data-storage/shared-preferences)
 
 
+## Aula 04
+- **Listas**
+	- [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+	
+	
+## Aula 05
+- **Base de dados usando Realm**
+	- [Realm.io](https://realm.io/)
+	
+
 
 ## Sobre o autor
 [<img src="https://card.exophase.com/1/1147004.png">](https://www.exophase.com/user/tuliofm/)
