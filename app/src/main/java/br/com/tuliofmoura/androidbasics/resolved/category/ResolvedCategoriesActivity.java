@@ -23,9 +23,9 @@ public class ResolvedCategoriesActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.resolved_activity_list);
+        setContentView(R.layout.resolved_activity_fragment);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.list_fragment_container, ResolvedCategoriesFragment.newInstance())
+                .replace(R.id.fragment_container, ResolvedCategoriesFragment.newInstance())
                 .commit();
     }
 

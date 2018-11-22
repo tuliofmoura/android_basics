@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,7 @@ import java.util.List;
 import br.com.tuliofmoura.androidbasics.R;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.MenuRepository;
 import br.com.tuliofmoura.androidbasics.resolved.model.database.menu.Product;
+import br.com.tuliofmoura.androidbasics.resolved.order.ResolvedOrderActivity;
 
 public class ResolvedProductsActivity
         extends AppCompatActivity
@@ -39,9 +42,9 @@ public class ResolvedProductsActivity
             // caso contrário usamos uma lista nova e vazia
         else
             selectedProducts = new ArrayList<>();
-        setContentView(R.layout.resolved_activity_list);
+        setContentView(R.layout.resolved_activity_fragment);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.list_fragment_container, ResolvedProductsFragment.newInstance())
+                .replace(R.id.fragment_container, ResolvedProductsFragment.newInstance())
                 .commit();
     }
 
@@ -51,6 +54,20 @@ public class ResolvedProductsActivity
         if (!selectedProducts.isEmpty())
             //salvamos a lista de produtos selecionados atualmente
             outState.putSerializable(SAVED_STATE_PRODUCTS, selectedProducts);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.resolved_product_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_send) {
+            startActivity(ResolvedOrderActivity.newIntent(this, selectedProducts));
+        }
+        return true;
     }
 
     @Override

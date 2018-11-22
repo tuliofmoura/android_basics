@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".resolved.ResolvedBrandedLaunchActivity"
             android:screenOrientation="portrait"
@@ -33,7 +32,7 @@
         <activity
             android:name=".resolved.product.ResolvedProductsActivity"
             android:screenOrientation="portrait" />
-
+        <activity android:name=".resolved.order.ResolvedOrderActivity"></activity>
     </application>
 
 </manifest>
